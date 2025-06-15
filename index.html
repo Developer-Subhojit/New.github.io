@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Achievements</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      font-family: sans-serif;
+    }
+    .bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+      pointer-events: none;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: rgba(0, 0, 0, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar h1 {
+      color: white;
+      font-size: 24px;
+      font-family: 'Times New Roman', serif;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      border-radius: 2px;
+    }
+    .certificate-box {
+      margin: 20px auto;
+      padding: 10px;
+      max-width: 90%;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    }
+    .certificate-box img {
+      width: 100%;
+      max-height: 500px;
+      height: auto;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto;
+      transition: transform 0.3s ease;
+      object-fit: contain;
+    }
+    .certificate-box img:hover {
+      transform: scale(1.03);
+    }
+    .gym {
+      background-color: rgba(0, 0, 0, 0.3);
+      text-align: center;
+      color: white;
+      padding: 1rem;
+      font-size: 1rem;
+    }
+    .gym p {
+      padding: 2px;
+    }
+    .photo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .photo img {
+      width: 50%;
+      max-width: 200px;
+      border-radius: 50%;
+      border: 10px solid transparent;
+    }
+    .achievements-title {
+      font-size: 2rem;
+      text-align: center;
+      color: white;
+      margin-bottom: 20px;
+      font-family: 'Georgia', serif;
+    }
+    .certificate-title {
+      text-align: center;
+      color: white;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    @media (max-width: 768px) {
+      .img img {
+        max-width: 90%;
+      }
+    }
+    @media (max-width: 600px) {
+      .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgba(0,0,0,0.7);
+        flex-direction: column;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+      .nav-links.open {
+        max-height: 300px;
+      }
+      .nav-links a {
+        padding: 15px 20px;
+        border-top: 1px solid #444;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <video autoplay muted loop class="bg-video">
+    <source src="d8a048d52479d9fab189c9f7fb82643b.mp4" type="video/mp4">
+  </video>
+
+  <div class="wrapper">
+    <div class="navbar">
+      <h1>WEBDeveloper</h1>
+      <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="nav-links" id="nav-links">
+        <a href="https://cinematic-industry.github.io/Developer/">Home</a>
+        <a href="#">About</a>
+        <a href="#">Achievement</a>
+        <a href="https://cinematic-industry.github.io/I-m-a-photographer/">Contact (My manager)</a>
+      </div>
+    </div>
+
+    <div class="img">
+      <div class="photo">
+        <img src="https://i.ibb.co/QvTHScng/91-98756-82631-20250523-155602.jpg" alt="Profile">
+      </div>
+      <p class="achievements-title">My Achievements</p>
+
+      <div class="certificate-box">
+        <p class="certificate-title">Infosys Python Program Certificate</p>
+        <img src="https://i.ibb.co/V03DNrM7/IMG-20250615-210538-1.png" alt="IMG-20250615-210538-1" border="0">     </div>
+
+      <div class="certificate-box">
+        <p class="certificate-title">Wadhwani Foundation Entrepreneurship Certificate</p>
+        <img src="https://i.ibb.co/1Y7WmCJd/Screenshot-2025-06-15-20-14-25-61-e5d3893ac03954c6bb675ef2555b879b.png" alt="Achievement 2">
+      </div>
+
+      <div class="certificate-box">
+        <p class="certificate-title">Microsoft Introduction to Networking and Cloud Computing</p>
+        <img src="https://i.ibb.co/mZGd1yJ/IMG-20250514-112214.png" alt="Achievement 3">
+      </div>
+    </div>
+
+    <footer class="gym">
+      <p>
+        Original website will be coming soon!<br>
+        © 2025 Developer. All rights reserved.<br>
+        <span style="font-family:Times New Roman;">Developed By Subhojit Halder</span>
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
